@@ -10,6 +10,14 @@ let {
   getUserById 
 } = require('./data.js');
 
+app.get("/", (req ,res) => {
+  try{
+     return res.status(200).json({ message: "Helllo" })
+  } catch (error){
+    return res.status(500).json({ message : "error" })
+  }
+})
+
 // Exercise 1: Get All Articles
 app.get('/articles', async (req, res) => {
   try {
